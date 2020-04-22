@@ -4,11 +4,7 @@ name: Maven build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on:
-  push:
-    branches: [ throw-away ]
-  pull_request:
-    branches: [ master ]
+on: [push]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -42,7 +38,7 @@ jobs:
       run: |
         ls -l target
         docker -v --debug
-        docker build \
+        docker build -f docker/Dockerfile \
           --cache-from library/openjdk \
           --tag kwonghung/spring-http2-json-streaming-poc \
           --build-arg BUILD_JAR_FILE=spring-http2-json-streaming-poc-0.0.1-SNAPSHOT.jar .
