@@ -1,4 +1,4 @@
-FROM openjdk:11.07-jdk-slim
+FROM openjdk:11.0.7-jdk-slim
 LABEL maintainer="kwonghung.yip@gmail.com"
 
 ARG BUILD_JAR_FILE
