@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/oboe-browser.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+	oboe('/interval')
+	.node('![10]',() => {
+		console.log('abort');
+		this.abort();
+	})
+	.node('{ref}',(node) => {
+		console.log(node);
+		let p = document.createElement('p');
+		p.textContent = node.ref+":"+node.firstName+" "+node.lastName;
+		let d = document.querySelector('#messages');
+		d.appendChild(p);
+	});
+	
+</script>
+
+<div id="messages">
+</div>
+</body>
+</html>

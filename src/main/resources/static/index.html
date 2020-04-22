@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<canvas id="c1"></canvas>
+<video id="v1"></video>
+
+<script type="text/javascript">
+	let video = document.getElementById('v1');
+	let canvas = document.getElementById('c1');
+
+	fetch('/echo')
+	.then(response => {
+		console.log(response);
+		return response.text();
+	})
+	.then(json => {
+		console.log(json);
+	})
+	
+	navigator.mediaDevices.getUserMedia({video:{width:320,height:240},audio:false})
+	.then(stream => {
+		console.log(stream);
+		//video.src = window.URL.createObjectURL(stream);
+		video.srcObject = stream;
+		video.play();
+	})
+	
+	setInterval(() => {
+		let ctx = canvas.getContext('2d');
+		ctx.drawImage(video,0,0,320,240);
+	},1000)
+</script>
+
+</body>
+</html>
