@@ -1,5 +1,4 @@
 server:
-  port: 8443
   http2:
     enabled: true
 
@@ -11,7 +10,8 @@ logging:
 ---
 spring:  profiles:  - local
   
-server:  ssl: 
+server:
+  port: 8443  ssl: 
     key-store: classpath:local.p12
     key-store-type: PKCS12
     key-store-password: abcd1234
@@ -19,3 +19,5 @@ server:  ssl:
 
 ---
 spring:  profiles:  - k8s
+
+server:  port: 8080
