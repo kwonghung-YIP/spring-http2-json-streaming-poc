@@ -21,3 +21,4 @@ server:
 spring:  profiles:  - k8s
 
 server:  port: 8080
+  forward-headers-strategy: native
