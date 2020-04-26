@@ -1,5 +1,6 @@
 logging:
   level:
+    web: debug
     reactor.netty: trace
     io.netty: trace
     
