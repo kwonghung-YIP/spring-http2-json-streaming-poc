@@ -1,7 +1,7 @@
 logging:
   level:
-    reactor.netty: debug
-    io.netty: debug
+    reactor.netty: trace
+    io.netty: trace
     
 ---
 spring:  profiles:  - local
