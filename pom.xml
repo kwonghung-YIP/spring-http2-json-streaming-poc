@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>hung-poc</groupId>
-	<artifactId>spring-http2-json-streaming-poc-1</artifactId>
+	<artifactId>spring-http2-json-streaming-poc</artifactId>
 	<version>${revision}${changelist}</version>
 	<name>spring-http2-json-streaming-poc-1</name>
 	<description>Spring Boot + jdk11 + webflux +netty +http2</description>
