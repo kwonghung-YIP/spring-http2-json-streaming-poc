@@ -1,0 +1,24 @@
+logging:
+  level:
+    web: debug
+    org.springframework.security.web.FilterChainProxy: debug
+    
+management:  endpoint:    info:      enabled: true
+    env:      enabled: true
+    metrics:      enabled: true
+    conditions:      enabled: true
+  endpoints:    web:      exposure:        include:        - info
+        - env
+        - metrics
+        - conditions
+        
+server:
+  port: 8443
+  http2:
+    enabled: true  
+  ssl: 
+    key-store: classpath:my-server2.p12
+    key-store-type: PKCS12
+    key-store-password: abcd1234
+    key-alias: my-cert
+    
