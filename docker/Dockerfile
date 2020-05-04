@@ -3,7 +3,7 @@ LABEL maintainer="kwonghung.yip@gmail.com"
 
 ARG BUILD_JAR_FILE
 ENV BUILD_JAR_FILE=$BUILD_JAR_FILE
-ENV JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom"
+ENV JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom $JAVA_OPTS"
 
 WORKDIR /usr/local/springboot
 
